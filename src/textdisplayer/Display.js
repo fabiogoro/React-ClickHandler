@@ -4,7 +4,7 @@ import BootstrapAlert from 'react-bootstrap/Alert';
 import Col from 'react-bootstrap/Col';
 
 
-export function Alert(props) {
+export function Display(props) {
     return (
         <Row className="m-2 justify-content-md-center">
           <Col md="5">

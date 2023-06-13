@@ -1,13 +1,7 @@
-import { ClickHandler } from './clickhandler/ClickHandler'
-import Container from 'react-bootstrap/Container';
-import { Component } from 'react'
+import { TextDisplayer } from './textdisplayer/TextDisplayer'
 
-export default class App extends Component {
-  render() {
-    return (
-      <Container>
-        <ClickHandler></ClickHandler>
-      </Container>
-    );
-  }
+export default function App() {
+  return (
+    <TextDisplayer></TextDisplayer>
+  );
 }

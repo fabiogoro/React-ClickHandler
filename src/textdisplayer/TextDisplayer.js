@@ -1,10 +1,10 @@
 import { ButtonRow } from './ButtonRow'
-import { Alert } from './Alert'
+import { Display } from './Display'
 import { Separator } from './Separator'
 import Container from 'react-bootstrap/Container'
 import { useState } from 'react'
 
-export function ClickHandler() {
+export function TextDisplayer() {
   const [displayMessage, setMessage] = useState("")
   return (
     <Container>
@@ -14,7 +14,7 @@ export function ClickHandler() {
       <Separator></Separator>
       <ButtonRow displayFunction={(e)=>setMessage(`You have clicked ${e.target.innerText}`)} numbers={[3,6]}></ButtonRow>
       <Separator></Separator>
-      {displayMessage?<Alert text={displayMessage}></Alert>:null}
+      {displayMessage?<Display text={displayMessage}></Display>:null}
     </Container>
   );
 }
