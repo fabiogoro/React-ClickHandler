@@ -1,30 +1,20 @@
 import { ButtonRow } from './ButtonRow'
 import { Alert } from './Alert'
 import { Separator } from './Separator'
-import Container from 'react-bootstrap/Container';
-import { Component } from 'react'
+import Container from 'react-bootstrap/Container'
+import { useState } from 'react'
 
-export class ClickHandler extends Component {
-  constructor(){
-    super()
-    this.state = {displayMessage: ""}
-  }
-
-  render() {
-    return (
-      <Container>
-        <ButtonRow displayFunction={this.displayFunction.bind(this)} numbers={[1,2]}></ButtonRow>
-        <Separator></Separator>
-        <ButtonRow displayFunction={this.displayFunction.bind(this)} numbers={[2,4]}></ButtonRow>
-        <Separator></Separator>
-        <ButtonRow displayFunction={this.displayFunction.bind(this)} numbers={[3,6]}></ButtonRow>
-        <Separator></Separator>
-        {this.state.displayMessage?<Alert className="text-center" text={this.state.displayMessage}></Alert>:null}
-      </Container>
-    );
-  }
-
-  displayFunction(e){
-    this.setState({displayMessage: `You have clicked ${e.target.innerText}`})
-  }
+export function ClickHandler() {
+  const [displayMessage, setMessage] = useState("")
+  return (
+    <Container>
+      <ButtonRow displayFunction={(e)=>setMessage(`You have clicked ${e.target.innerText}`)} numbers={[1,2]}></ButtonRow>
+      <Separator></Separator>
+      <ButtonRow displayFunction={(e)=>setMessage(`You have clicked ${e.target.innerText}`)} numbers={[2,4]}></ButtonRow>
+      <Separator></Separator>
+      <ButtonRow displayFunction={(e)=>setMessage(`You have clicked ${e.target.innerText}`)} numbers={[3,6]}></ButtonRow>
+      <Separator></Separator>
+      {displayMessage?<Alert className="text-center" text={displayMessage}></Alert>:null}
+    </Container>
+  );
 }
