@@ -14,7 +14,7 @@ export function ClickHandler() {
       <Separator></Separator>
       <ButtonRow displayFunction={(e)=>setMessage(`You have clicked ${e.target.innerText}`)} numbers={[3,6]}></ButtonRow>
       <Separator></Separator>
-      {displayMessage?<Alert className="text-center" text={displayMessage}></Alert>:null}
+      {displayMessage?<Alert text={displayMessage}></Alert>:null}
     </Container>
   );
 }
