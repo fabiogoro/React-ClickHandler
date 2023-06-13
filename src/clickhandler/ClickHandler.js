@@ -25,6 +25,6 @@ export class ClickHandler extends Component {
   }
 
   displayFunction(e){
-    console.log('not implemented')
+    this.setState({displayMessage: `You have clicked ${e.target.innerText}`})
   }
 }
